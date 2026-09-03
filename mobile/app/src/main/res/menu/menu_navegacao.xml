@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_inicio"
+        android:icon="@drawable/ic_inicio"
+        android:title="@string/nav_inicio" />
+    <item
+        android:id="@+id/nav_avisos"
+        android:icon="@drawable/ic_avisos"
+        android:title="@string/nav_avisos" />
+    <item
+        android:id="@+id/nav_reservas"
+        android:icon="@drawable/ic_reservas"
+        android:title="@string/nav_reservas" />
+    <item
+        android:id="@+id/nav_ocorrencias"
+        android:icon="@drawable/ic_ocorrencias"
+        android:title="@string/nav_ocorrencias" />
+    <item
+        android:id="@+id/nav_perfil"
+        android:icon="@drawable/ic_perfil"
+        android:title="@string/nav_perfil" />
+</menu>

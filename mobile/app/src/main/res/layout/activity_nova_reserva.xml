@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Nova reserva em tres passos visiveis na mesma tela: area, data e horario.
+    A lista de horarios so aparece depois que area e data estao escolhidas,
+    o que evita mostrar ao morador opcoes que ainda nao fazem sentido.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/raizNovaReserva"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/jc_fundo"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/barra"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/jc_azul_800"
+        app:navigationIcon="@drawable/ic_voltar"
+        app:navigationIconTint="@color/jc_branco"
+        app:title="@string/nova_reserva_titulo"
+        app:titleTextColor="@color/jc_branco" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="@dimen/esp_m">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- passo 1: area -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nova_reserva_area"
+                android:textAppearance="@style/Texto.Secao" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/areaLayout"
+                style="@style/CampoTexto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/esp_s"
+                android:hint="@string/nova_reserva_selecione_area">
+
+                <AutoCompleteTextView
+                    android:id="@+id/areaInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:inputType="none"
+                    android:maxLines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/areaInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/esp_xs"
+                android:textAppearance="@style/Texto.Apoio"
+                android:visibility="gone" />
+
+            <!-- passo 2: data -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/esp_g"
+                android:text="@string/nova_reserva_data"
+                android:textAppearance="@style/Texto.Secao" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/dataBotao"
+                style="@style/BotaoSecundario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/esp_s"
+                android:gravity="start|center_vertical"
+                android:text="@string/nova_reserva_escolher_data"
+                app:icon="@drawable/ic_reservas" />
+
+            <!-- passo 3: horario -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/esp_g"
+                android:text="@string/nova_reserva_horarios"
+                android:textAppearance="@style/Texto.Secao" />
+
+            <TextView
+                android:id="@+id/horariosAviso"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/esp_s"
+                android:text="@string/nova_reserva_selecione_data"
+                android:textAppearance="@style/Texto.Apoio" />
+
+            <ProgressBar
+                android:id="@+id/horariosProgresso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/esp_m"
+                android:visibility="gone" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/horariosRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/esp_s"
+                android:nestedScrollingEnabled="false" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- acao principal fixa no rodape, sempre ao alcance do polegar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/jc_branco"
+        android:orientation="vertical"
+        android:padding="@dimen/esp_m">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/confirmarBotao"
+            style="@style/BotaoPrincipal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="@string/nova_reserva_confirmar" />
+
+        <ProgressBar
+            android:id="@+id/confirmarProgresso"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</LinearLayout>

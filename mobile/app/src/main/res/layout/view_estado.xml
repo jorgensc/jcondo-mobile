@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Bloco reutilizado por todas as listas para os tres estados que nao sao
+    "lista com conteudo": carregando, vazio e erro. Manter um so componente
+    garante que as telas se comportem igual nessas situacoes, que e um dos
+    princípios de consistencia levantados na AA1.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/esp_g"
+    android:visibility="gone">
+
+    <ProgressBar
+        android:id="@+id/estadoProgresso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/estadoIcone"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:alpha="0.7"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_caixa_vazia" />
+
+    <TextView
+        android:id="@+id/estadoTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/esp_m"
+        android:gravity="center"
+        android:textAppearance="@style/Texto.Secao" />
+
+    <TextView
+        android:id="@+id/estadoTexto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/esp_s"
+        android:gravity="center"
+        android:textAppearance="@style/Texto.Apoio" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/estadoBotao"
+        style="@style/BotaoSecundario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/esp_m"
+        android:text="@string/acao_tentar_novamente"
+        android:visibility="gone" />
+
+</LinearLayout>

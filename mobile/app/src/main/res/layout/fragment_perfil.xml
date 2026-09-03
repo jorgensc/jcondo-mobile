@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/raizPerfil"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/jc_fundo"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/esp_g">
+
+        <!-- cabecalho com avatar de iniciais -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_topo_azul"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/esp_m"
+            android:paddingEnd="@dimen/esp_m"
+            android:paddingTop="@dimen/esp_g"
+            android:paddingBottom="@dimen/esp_g">
+
+            <TextView
+                android:id="@+id/avatarTexto"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:background="@drawable/bg_circulo_branco"
+                android:gravity="center"
+                android:textColor="@color/jc_branco"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/perfilNome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/esp_m"
+                android:gravity="center"
+                android:textColor="@color/jc_branco"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/perfilUnidade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/esp_xs"
+                android:gravity="center"
+                android:textColor="@color/jc_azul_100"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <!-- dados editaveis -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/esp_m"
+            android:layout_marginTop="@dimen/esp_g"
+            android:text="@string/perfil_dados"
+            android:textAppearance="@style/Texto.Secao" />
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Cartao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/esp_m"
+            android:layout_marginTop="@dimen/esp_s"
+            android:layout_marginEnd="@dimen/esp_m">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/esp_m">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/perfilEmailLayout"
+                    style="@style/CampoTexto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/perfil_email"
+                    app:startIconDrawable="@drawable/ic_email">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/perfilEmailInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/perfilTelefoneLayout"
+                    style="@style/CampoTexto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/esp_s"
+                    android:hint="@string/perfil_telefone"
+                    app:startIconDrawable="@drawable/ic_telefone">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/perfilTelefoneInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:maxLines="1" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/perfilSalvarBotao"
+                    style="@style/BotaoPrincipal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/esp_m"
+                    android:text="@string/perfil_salvar" />
+
+                <ProgressBar
+                    android:id="@+id/perfilProgresso"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="true"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- preferencias -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/esp_m"
+            android:layout_marginTop="@dimen/esp_g"
+            android:text="@string/perfil_preferencias"
+            android:textAppearance="@style/Texto.Secao" />
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Cartao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/esp_m"
+            android:layout_marginTop="@dimen/esp_s"
+            android:layout_marginEnd="@dimen/esp_m">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/esp_m">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/perfil_notificacoes"
+                        android:textAppearance="@style/Texto.Corpo" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="@string/perfil_notificacoes_detalhe"
+                        android:textAppearance="@style/Texto.Apoio" />
+
+                </LinearLayout>
+
+                <com.google.android.material.materialswitch.MaterialSwitch
+                    android:id="@+id/notificacoesSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/esp_s"
+                    android:minWidth="@dimen/alvo_toque"
+                    android:minHeight="@dimen/alvo_toque" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- sair -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/sairBotao"
+            style="@style/BotaoSecundario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/esp_m"
+            android:layout_marginTop="@dimen/esp_g"
+            android:layout_marginEnd="@dimen/esp_m"
+            android:text="@string/perfil_sair"
+            android:textColor="@color/jc_erro"
+            app:icon="@drawable/ic_sair"
+            app:iconTint="@color/jc_erro"
+            app:strokeColor="@color/jc_erro" />
+
+        <TextView
+            android:id="@+id/versaoTexto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/esp_g"
+            android:gravity="center"
+            android:textAppearance="@style/Texto.Apoio" />
+
+        <TextView
+            android:id="@+id/servidorTexto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:gravity="center"
+            android:textAppearance="@style/Texto.Apoio"
+            android:textColor="@color/jc_texto_desabilitado" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

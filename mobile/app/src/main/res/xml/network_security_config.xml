@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    A partir do Android 9 o trafego HTTP sem TLS e bloqueado por padrao.
+    A API do JCondo roda em HTTP na rede local durante o desenvolvimento
+    (emulador em 10.0.2.2 e celular fisico na mesma Wi-Fi), entao o cleartext
+    fica liberado apenas para enderecos privados. Em producao a API deve
+    ficar atras de HTTPS e este arquivo pode ser removido.
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="false" />
+
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">10.0.2.2</domain>
+        <domain includeSubdomains="true">localhost</domain>
+        <domain includeSubdomains="true">127.0.0.1</domain>
+        <!-- faixas de rede local, para testar num celular fisico -->
+        <domain includeSubdomains="true">192.168.0.0</domain>
+        <domain includeSubdomains="true">10.0.0.0</domain>
+    </domain-config>
+</network-security-config>

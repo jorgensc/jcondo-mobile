@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!--
+        Tema unico e claro, coerente com a identidade definida na AA1.
+        forceDarkAllowed=false evita que o modo escuro automatico do sistema
+        inverta as cores da marca e quebre o contraste dos cards.
+    -->
+    <style name="Theme.JCondo" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/jc_azul_800</item>
+        <item name="colorOnPrimary">@color/jc_branco</item>
+        <item name="colorPrimaryContainer">@color/jc_azul_100</item>
+        <item name="colorOnPrimaryContainer">@color/jc_azul_900</item>
+
+        <item name="colorSecondary">@color/jc_azul_600</item>
+        <item name="colorOnSecondary">@color/jc_branco</item>
+        <item name="colorSecondaryContainer">@color/jc_azul_50</item>
+        <item name="colorOnSecondaryContainer">@color/jc_azul_900</item>
+
+        <item name="colorError">@color/jc_erro</item>
+        <item name="colorOnError">@color/jc_branco</item>
+
+        <item name="android:colorBackground">@color/jc_fundo</item>
+        <item name="colorSurface">@color/jc_branco</item>
+        <item name="colorOnSurface">@color/jc_texto</item>
+        <item name="colorOnSurfaceVariant">@color/jc_texto_secundario</item>
+        <item name="colorOutline">@color/jc_borda</item>
+
+        <item name="android:statusBarColor">@color/jc_azul_800</item>
+        <item name="android:navigationBarColor">@color/jc_branco</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+    </style>
+
+    <!-- a tela de login tem fundo azul cheio, entao a barra de status acompanha -->
+    <style name="Theme.JCondo.Login" parent="Theme.JCondo">
+        <item name="android:windowBackground">@color/jc_azul_800</item>
+    </style>
+
+    <!--
+        Tipografia: uma escala curta e reaproveitada em todas as telas,
+        que e o que da consistencia visual entre elas.
+    -->
+    <style name="Texto.Titulo" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="android:textColor">@color/jc_texto</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Texto.Secao" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textColor">@color/jc_texto</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Texto.Corpo" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@color/jc_texto</item>
+    </style>
+
+    <style name="Texto.Apoio" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:textColor">@color/jc_texto_secundario</item>
+    </style>
+
+    <!-- etiqueta de status/prioridade usada em avisos, reservas e ocorrencias -->
+    <style name="Etiqueta">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:paddingBottom">3dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Cartao" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">@dimen/raio_card</item>
+        <item name="cardElevation">1dp</item>
+        <item name="cardBackgroundColor">@color/jc_branco</item>
+        <item name="strokeColor">@color/jc_borda</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+
+    <style name="BotaoPrincipal" parent="Widget.Material3.Button">
+        <item name="android:minHeight">@dimen/alvo_toque</item>
+        <item name="android:textSize">16sp</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="backgroundTint">@color/jc_azul_800</item>
+    </style>
+
+    <style name="BotaoSecundario" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:minHeight">@dimen/alvo_toque</item>
+        <item name="android:textSize">16sp</item>
+        <item name="cornerRadius">12dp</item>
+    </style>
+
+    <style name="CampoTexto" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+    </style>
+
+    <style name="IndicadorNavegacao" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/jc_azul_100</item>
+    </style>
+
+</resources>

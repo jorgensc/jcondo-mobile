@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Faixa de horario da agenda. O mesmo item cobre os tres estados
+    (livre, selecionado e ocupado) pelo seletor bg_horario, e o texto
+    "Ocupado" aparece embaixo para nao depender so da cor - moradores
+    com baixa visao para cores continuam entendendo a tela.
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/esp_xs">
+
+    <LinearLayout
+        android:id="@+id/horarioCaixa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_horario"
+        android:gravity="center"
+        android:minHeight="@dimen/alvo_toque"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/esp_s"
+        android:paddingEnd="@dimen/esp_s"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:id="@+id/horarioFaixa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:duplicateParentState="true"
+            android:textColor="@color/texto_horario"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/horarioAviso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nova_reserva_ocupado"
+            android:textColor="@color/jc_texto_desabilitado"
+            android:textSize="11sp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</FrameLayout>

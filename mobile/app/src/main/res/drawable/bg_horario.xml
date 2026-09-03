@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Um seletor cobre os tres estados da faixa de horario numa unica peca,
+     e por isso a lista de horarios nao precisa trocar de layout em runtime. -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_enabled="false">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/jc_neutro_fundo" />
+            <corners android:radius="12dp" />
+            <stroke android:width="1dp" android:color="@color/jc_borda" />
+        </shape>
+    </item>
+
+    <item android:state_selected="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/jc_azul_800" />
+            <corners android:radius="12dp" />
+            <stroke android:width="1dp" android:color="@color/jc_azul_800" />
+        </shape>
+    </item>
+
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/jc_branco" />
+            <corners android:radius="12dp" />
+            <stroke android:width="1dp" android:color="@color/jc_azul_600" />
+        </shape>
+    </item>
+
+</selector>

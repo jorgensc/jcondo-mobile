@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Tela inicial. A ordem dos blocos segue a hierarquia visual definida na AA1:
+    primeiro quem e o morador, depois os numeros do condominio, o compromisso
+    mais proximo, os avisos recentes e, por ultimo, os atalhos.
+-->
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipeRefresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/conteudoHome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/esp_g">
+
+                <!-- cabecalho azul -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_topo_azul"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/esp_m"
+                    android:paddingEnd="@dimen/esp_m"
+                    android:paddingTop="@dimen/esp_g"
+                    android:paddingBottom="@dimen/esp_g">
+
+                    <TextView
+                        android:id="@+id/saudacaoTexto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/carregando"
+                        android:textColor="@color/jc_azul_100"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/nomeTexto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/esp_xs"
+                        android:textColor="@color/jc_branco"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/unidadeTexto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/esp_xs"
+                        android:drawablePadding="@dimen/esp_xs"
+                        android:textColor="@color/jc_azul_100"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <!-- contadores -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/esp_m"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/esp_m"
+                    android:paddingEnd="@dimen/esp_m">
+
+                    <com.google.android.material.card.MaterialCardView
+                        style="@style/Cartao"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/esp_s"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="@dimen/esp_m">
+
+                            <TextView
+                                android:id="@+id/cardAvisosNumero"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="@color/jc_azul_800"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/home_card_avisos"
+                                android:textAppearance="@style/Texto.Apoio" />
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        style="@style/Cartao"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/esp_s"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="@dimen/esp_m">
+
+                            <TextView
+                                android:id="@+id/cardReservasNumero"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="@color/jc_azul_800"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/home_card_reservas"
+                                android:textAppearance="@style/Texto.Apoio" />
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        style="@style/Cartao"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="@dimen/esp_m">
+
+                            <TextView
+                                android:id="@+id/cardOcorrenciasNumero"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="@color/jc_azul_800"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/home_card_ocorrencias"
+                                android:textAppearance="@style/Texto.Apoio" />
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+                <!-- proxima reserva -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/esp_m"
+                    android:layout_marginTop="@dimen/esp_g"
+                    android:text="@string/home_proxima_reserva"
+                    android:textAppearance="@style/Texto.Secao" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/proximaReservaCartao"
+                    style="@style/Cartao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/esp_m"
+                    android:layout_marginTop="@dimen/esp_s"
+                    android:layout_marginEnd="@dimen/esp_m">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/esp_m">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/bg_circulo_azul"
+                            android:contentDescription="@string/desc_icone_reserva"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_reservas" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/esp_m"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/proximaReservaArea"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="@style/Texto.Corpo"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/proximaReservaData"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:textAppearance="@style/Texto.Apoio" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/proximaReservaHora"
+                            style="@style/Etiqueta"
+                            android:background="@drawable/bg_etiqueta_azul"
+                            android:textColor="@color/jc_azul_600" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/semReservaCartao"
+                    style="@style/Cartao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/esp_m"
+                    android:layout_marginTop="@dimen/esp_s"
+                    android:layout_marginEnd="@dimen/esp_m"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/esp_m">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/home_sem_reserva"
+                            android:textAppearance="@style/Texto.Apoio" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/reservarBotao"
+                            style="@style/Widget.Material3.Button.TextButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/esp_xs"
+                            android:minHeight="@dimen/alvo_toque"
+                            android:paddingStart="0dp"
+                            android:text="@string/home_sem_reserva_acao"
+                            app:icon="@drawable/ic_calendario_add" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- avisos recentes -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/esp_g"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/esp_m"
+                    android:paddingEnd="@dimen/esp_s">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/home_avisos_recentes"
+                        android:textAppearance="@style/Texto.Secao" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/verTodosAvisos"
+                        style="@style/Widget.Material3.Button.TextButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minHeight="@dimen/alvo_toque"
+                        android:text="@string/home_ver_todos" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/avisosContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/esp_m"
+                    android:paddingEnd="@dimen/esp_m" />
+
+                <!-- atalhos -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/esp_g"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/esp_m"
+                    android:paddingEnd="@dimen/esp_m">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/atalhoReservar"
+                        style="@style/BotaoPrincipal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/esp_s"
+                        android:layout_weight="1"
+                        android:text="@string/home_atalho_reservar"
+                        android:textSize="14sp"
+                        app:icon="@drawable/ic_calendario_add" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/atalhoOcorrencia"
+                        style="@style/BotaoSecundario"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/home_atalho_ocorrencia"
+                        android:textSize="14sp"
+                        app:icon="@drawable/ic_ocorrencias" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <include
+                android:id="@+id/estado"
+                layout="@layout/view_estado" />
+
+        </FrameLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

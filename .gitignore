@@ -1,0 +1,28 @@
+# ---- Android / Gradle ----
+mobile/.gradle/
+mobile/build/
+mobile/app/build/
+mobile/local.properties
+mobile/.idea/
+mobile/captures/
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# ---- Backend / Maven ----
+backend/target/
+backend/.mvn/wrapper/maven-wrapper.jar
+
+# ---- IDEs ----
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+
+# ---- Sistema ----
+.DS_Store
+Thumbs.db
+*.log

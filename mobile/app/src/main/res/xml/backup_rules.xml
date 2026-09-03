@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- o token de sessao nunca vai para o backup do aparelho -->
+    <exclude domain="sharedpref" path="jcondo_sessao.xml" />
+</full-backup-content>

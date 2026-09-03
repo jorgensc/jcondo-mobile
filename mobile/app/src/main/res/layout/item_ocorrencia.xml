@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ocorrenciaCartao"
+    style="@style/Cartao"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/esp_s"
+    android:clickable="true"
+    android:focusable="true"
+    app:rippleColor="@color/jc_azul_100">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/esp_m">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/ocorrenciaStatus"
+                style="@style/Etiqueta"
+                android:background="@drawable/bg_etiqueta_azul"
+                android:textColor="@color/jc_azul_600" />
+
+            <TextView
+                android:id="@+id/ocorrenciaProtocolo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/esp_s"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:textAppearance="@style/Texto.Apoio" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/ocorrenciaTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/esp_s"
+            android:textAppearance="@style/Texto.Corpo"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/ocorrenciaCategoria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:textAppearance="@style/Texto.Apoio" />
+
+        <TextView
+            android:id="@+id/ocorrenciaData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/esp_s"
+            android:textAppearance="@style/Texto.Apoio"
+            android:textColor="@color/jc_texto_desabilitado" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

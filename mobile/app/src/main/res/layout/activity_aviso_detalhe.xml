@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/jc_fundo"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/barra"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/jc_azul_800"
+        app:navigationIcon="@drawable/ic_voltar"
+        app:navigationIconTint="@color/jc_branco"
+        app:title="@string/avisos_titulo"
+        app:titleTextColor="@color/jc_branco" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/esp_m">
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Cartao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/esp_g">
+
+                <TextView
+                    android:id="@+id/detPrioridade"
+                    style="@style/Etiqueta"
+                    android:background="@drawable/bg_etiqueta_azul"
+                    android:textColor="@color/jc_azul_600" />
+
+                <TextView
+                    android:id="@+id/detTitulo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/esp_m"
+                    android:textAppearance="@style/Texto.Titulo" />
+
+                <TextView
+                    android:id="@+id/detData"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/esp_xs"
+                    android:textAppearance="@style/Texto.Apoio" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/esp_m"
+                    android:background="@color/jc_borda" />
+
+                <TextView
+                    android:id="@+id/detConteudo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/esp_m"
+                    android:lineSpacingMultiplier="1.35"
+                    android:textAppearance="@style/Texto.Corpo"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/detAutor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/esp_g"
+                    android:textAppearance="@style/Texto.Apoio"
+                    android:textColor="@color/jc_azul_600" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- escala de espacamento em multiplos de 4dp, pra manter o ritmo das telas -->
+    <dimen name="esp_xs">4dp</dimen>
+    <dimen name="esp_s">8dp</dimen>
+    <dimen name="esp_m">16dp</dimen>
+    <dimen name="esp_g">24dp</dimen>
+    <dimen name="esp_xg">32dp</dimen>
+
+    <dimen name="raio_card">16dp</dimen>
+    <dimen name="raio_etiqueta">8dp</dimen>
+
+    <!-- 48dp e o alvo minimo de toque recomendado pelo Material Design -->
+    <dimen name="alvo_toque">48dp</dimen>
+</resources>

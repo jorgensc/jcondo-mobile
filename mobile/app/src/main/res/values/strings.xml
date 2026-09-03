@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">JCondo</string>
+    <string name="app_slogan">Seu condomínio na palma da mão</string>
+
+    <!-- Login -->
+    <string name="login_titulo">Entrar</string>
+    <string name="login_email">E-mail</string>
+    <string name="login_senha">Senha</string>
+    <string name="login_entrar">Entrar</string>
+    <string name="login_entrando">Entrando…</string>
+    <string name="login_esqueci">Esqueci minha senha</string>
+    <string name="login_config_servidor">Configurar servidor</string>
+    <string name="login_endereco_api">Endereço da API</string>
+    <string name="login_endereco_ajuda">Use 10.0.2.2 no emulador ou o IP do computador na mesma rede Wi-Fi.</string>
+    <string name="login_salvar_servidor">Salvar endereço</string>
+    <string name="login_erro_email">Informe o e-mail cadastrado</string>
+    <string name="login_erro_senha">Informe sua senha</string>
+    <string name="login_recuperacao">A senha é redefinida pela administração do condomínio, na portaria.</string>
+
+    <!-- Navegação -->
+    <string name="nav_inicio">Início</string>
+    <string name="nav_avisos">Avisos</string>
+    <string name="nav_reservas">Reservas</string>
+    <string name="nav_ocorrencias">Ocorrências</string>
+    <string name="nav_perfil">Perfil</string>
+
+    <!-- Início -->
+    <string name="home_avisos_recentes">Avisos recentes</string>
+    <string name="home_proxima_reserva">Próxima reserva</string>
+    <string name="home_sem_reserva">Você não tem reservas agendadas</string>
+    <string name="home_sem_reserva_acao">Reservar uma área</string>
+    <string name="home_ver_todos">Ver todos</string>
+    <string name="home_atalho_reservar">Reservar área</string>
+    <string name="home_atalho_ocorrencia">Abrir ocorrência</string>
+    <string name="home_card_avisos">Avisos</string>
+    <string name="home_card_reservas">Reservas ativas</string>
+    <string name="home_card_ocorrencias">Ocorrências abertas</string>
+
+    <!-- Avisos -->
+    <string name="avisos_titulo">Avisos do condomínio</string>
+    <string name="avisos_vazio_titulo">Nenhum aviso publicado</string>
+    <string name="avisos_vazio_texto">Quando a administração publicar um comunicado, ele aparece aqui.</string>
+    <string name="prioridade_urgente">Urgente</string>
+    <string name="prioridade_alta">Importante</string>
+    <string name="prioridade_normal">Informativo</string>
+
+    <!-- Reservas -->
+    <string name="reservas_titulo">Minhas reservas</string>
+    <string name="reservas_nova">Nova reserva</string>
+    <string name="reservas_vazio_titulo">Nenhuma reserva</string>
+    <string name="reservas_vazio_texto">Reserve o salão de festas, a churrasqueira ou a quadra direto pelo aplicativo.</string>
+    <string name="reservas_cancelar">Cancelar reserva</string>
+    <string name="reservas_cancelar_pergunta">Cancelar esta reserva?</string>
+    <string name="reservas_cancelar_detalhe">O horário volta a ficar disponível para os outros moradores.</string>
+    <string name="reservas_cancelar_confirmar">Sim, cancelar</string>
+    <string name="reservas_cancelar_voltar">Manter reserva</string>
+    <string name="reservas_cancelada_ok">Reserva cancelada.</string>
+    <string name="status_confirmada">Confirmada</string>
+    <string name="status_cancelada">Cancelada</string>
+    <string name="status_realizada">Realizada</string>
+
+    <!-- Nova reserva -->
+    <string name="nova_reserva_titulo">Nova reserva</string>
+    <string name="nova_reserva_area">Área comum</string>
+    <string name="nova_reserva_data">Data</string>
+    <string name="nova_reserva_escolher_data">Escolher data</string>
+    <string name="nova_reserva_horarios">Horários disponíveis</string>
+    <string name="nova_reserva_confirmar">Confirmar reserva</string>
+    <string name="nova_reserva_selecione_area">Escolha a área que deseja reservar</string>
+    <string name="nova_reserva_selecione_data">Escolha uma data para ver os horários</string>
+    <string name="nova_reserva_selecione_horario">Selecione um horário disponível</string>
+    <string name="nova_reserva_sem_horario">Nenhum horário livre nesta data. Tente outro dia.</string>
+    <string name="nova_reserva_ok">Reserva confirmada!</string>
+    <string name="nova_reserva_ocupado">Ocupado</string>
+
+    <!-- Ocorrências -->
+    <string name="ocorrencias_titulo">Minhas ocorrências</string>
+    <string name="ocorrencias_nova">Nova ocorrência</string>
+    <string name="ocorrencias_vazio_titulo">Nenhuma ocorrência</string>
+    <string name="ocorrencias_vazio_texto">Registre problemas de iluminação, limpeza, elevadores ou manutenção e acompanhe o andamento por aqui.</string>
+    <string name="nova_ocorrencia_titulo">Nova ocorrência</string>
+    <string name="nova_ocorrencia_categoria">Categoria</string>
+    <string name="nova_ocorrencia_assunto">Assunto</string>
+    <string name="nova_ocorrencia_assunto_dica">Ex.: Lâmpada queimada na garagem</string>
+    <string name="nova_ocorrencia_descricao">O que aconteceu?</string>
+    <string name="nova_ocorrencia_descricao_dica">Descreva o local e o problema com o máximo de detalhes possível.</string>
+    <string name="nova_ocorrencia_enviar">Registrar ocorrência</string>
+    <string name="nova_ocorrencia_erro_categoria">Escolha uma categoria</string>
+    <string name="nova_ocorrencia_erro_assunto">Informe um assunto</string>
+    <string name="nova_ocorrencia_erro_descricao">Descreva o que aconteceu</string>
+    <string name="ocorrencia_protocolo">Protocolo %1$s</string>
+    <string name="ocorrencia_registrada">Ocorrência registrada. Protocolo %1$s</string>
+    <string name="ocorrencia_resposta_admin">Resposta da administração</string>
+    <string name="ocorrencia_aberta_em">Aberta em %1$s</string>
+    <string name="ocorrencia_atualizada_em">Atualizada em %1$s</string>
+
+    <!-- Perfil -->
+    <string name="perfil_titulo">Meu perfil</string>
+    <string name="perfil_dados">Dados cadastrais</string>
+    <string name="perfil_unidade">Unidade</string>
+    <string name="perfil_email">E-mail</string>
+    <string name="perfil_telefone">Telefone</string>
+    <string name="perfil_salvar">Salvar alterações</string>
+    <string name="perfil_salvo">Dados atualizados.</string>
+    <string name="perfil_preferencias">Preferências</string>
+    <string name="perfil_notificacoes">Avisar sobre novos comunicados</string>
+    <string name="perfil_notificacoes_detalhe">Notificação no celular quando a administração publicar um aviso.</string>
+    <string name="perfil_sair">Sair da conta</string>
+    <string name="perfil_sair_pergunta">Sair da conta?</string>
+    <string name="perfil_sair_detalhe">Você precisará informar e-mail e senha no próximo acesso.</string>
+    <string name="perfil_sobre">JCondo Mobile · versão %1$s</string>
+    <string name="perfil_servidor">Servidor: %1$s</string>
+
+    <!-- Mensagens gerais -->
+    <string name="erro_sem_conexao">Sem conexão com a internet. Verifique a rede e tente de novo.</string>
+    <string name="erro_servidor_indisponivel">Não foi possível falar com o servidor do condomínio. Confira o endereço da API e se ela está no ar.</string>
+    <string name="erro_generico">Algo deu errado. Tente novamente em instantes.</string>
+    <string name="erro_sessao_expirada">Sua sessão expirou. Entre novamente.</string>
+    <string name="acao_tentar_novamente">Tentar novamente</string>
+    <string name="acao_voltar">Voltar</string>
+    <string name="acao_cancelar">Cancelar</string>
+    <string name="acao_entendi">Entendi</string>
+    <string name="carregando">Carregando…</string>
+
+    <!-- Notificações -->
+    <string name="canal_avisos_nome">Avisos do condomínio</string>
+    <string name="canal_avisos_descricao">Comunicados publicados pela administração</string>
+    <string name="notificacao_novo_aviso">Novo aviso do condomínio</string>
+
+    <!-- Descrições para leitor de tela -->
+    <string name="desc_logo">Logotipo do JCondo</string>
+    <string name="desc_voltar">Voltar</string>
+    <string name="desc_icone_aviso">Ícone de aviso</string>
+    <string name="desc_icone_reserva">Ícone de reserva</string>
+    <string name="desc_icone_ocorrencia">Ícone de ocorrência</string>
+
+</resources>

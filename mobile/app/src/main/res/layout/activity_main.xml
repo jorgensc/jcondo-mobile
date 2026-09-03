@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Estrutura principal: um container para os fragmentos e a navegacao
+    inferior com as cinco areas do MVP. A navegacao inferior foi escolhida
+    na AA1 porque deixa as funcoes mais usadas a um toque de distancia,
+    dentro do alcance do polegar.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/raiz"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/jc_fundo">
+
+    <FrameLayout
+        android:id="@+id/conteudo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/navegacao"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navegacao"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/jc_branco"
+        app:elevation="8dp"
+        app:itemActiveIndicatorStyle="@style/IndicadorNavegacao"
+        app:itemIconTint="@color/nav_item"
+        app:itemTextColor="@color/nav_item"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu_navegacao" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

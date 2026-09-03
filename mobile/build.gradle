@@ -1,0 +1,5 @@
+// Build de topo do projeto JCondo Mobile.
+// Os plugins ficam declarados aqui com apply false e sao aplicados no modulo :app.
+plugins {
+    id 'com.android.application' version '8.7.3' apply false
+}

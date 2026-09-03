@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Versao compacta do aviso, usada na lista curta da tela inicial. -->
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/resumoCartao"
+    style="@style/Cartao"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/esp_s"
+    android:clickable="true"
+    android:focusable="true"
+    app:rippleColor="@color/jc_azul_100">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/esp_m">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_circulo_azul"
+            android:contentDescription="@string/desc_icone_aviso"
+            android:padding="8dp"
+            android:src="@drawable/ic_avisos" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/esp_m"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/resumoTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textAppearance="@style/Texto.Corpo"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/resumoData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textAppearance="@style/Texto.Apoio" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:alpha="0.5"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_seta_direita" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
