@@ -14,13 +14,9 @@ import java.net.UnknownHostException;
 import retrofit2.Response;
 
 /**
- * Traduz falhas de rede e respostas de erro da API em frases que o morador
- * entende.
- *
- * Este e um dos pontos de UX do projeto: sem esta camada, uma queda de Wi-Fi
- * apareceria na tela como "java.net.ConnectException" e um horario ocupado
- * como "HTTP 409". Com ela, o usuario le "Sem conexão com a internet" e
- * "O horário das 18:00 às 20:00 já está reservado".
+ * Traduz falha de rede e resposta de erro da API em frase que o morador entende.
+ * Sem isso, uma queda de Wi-Fi apareceria como "java.net.ConnectException" e um
+ * horario ocupado como "HTTP 409".
  */
 public final class RespostaApi {
 

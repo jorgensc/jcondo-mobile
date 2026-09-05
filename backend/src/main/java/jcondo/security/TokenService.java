@@ -9,12 +9,9 @@ import java.util.concurrent.ConcurrentHashMap;
 import org.springframework.stereotype.Service;
 
 /**
- * Controle de sessao por token, guardado em memoria.
- *
- * O app faz login uma vez, guarda o token no SharedPreferences e manda em
- * todas as chamadas seguintes no header Authorization. Cada token vale 12h.
- * Como a sessao fica em memoria, reiniciar o servidor derruba os logins -
- * a evolucao natural aqui seria JWT assinado ou uma tabela de sessoes.
+ * Sessao por token, guardada em memoria. Cada token vale 12h.
+ * Reiniciar o servidor derruba os logins; a evolucao natural e JWT assinado
+ * ou uma tabela de sessoes.
  */
 @Service
 public class TokenService {
@@ -33,7 +30,6 @@ public class TokenService {
         return token;
     }
 
-    /** Devolve o id do morador dono do token, ou null se invalido/expirado. */
     public Long moradorDoToken(String token) {
         if (token == null || token.isBlank()) {
             return null;

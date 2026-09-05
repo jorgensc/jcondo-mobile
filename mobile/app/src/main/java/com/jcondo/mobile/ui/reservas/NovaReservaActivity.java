@@ -37,10 +37,8 @@ import retrofit2.Response;
 /**
  * Nova reserva em tres passos: area, data e horario.
  *
- * A tela consulta a agenda do dia (/api/areas/{id}/horarios) e desabilita as
- * faixas ocupadas, mas a decisao final continua sendo do servidor: se dois
- * moradores confirmarem o mesmo horario ao mesmo tempo, a API devolve 409 e
- * o segundo recebe a mensagem explicando o motivo, com a agenda ja atualizada.
+ * A tela desabilita as faixas ocupadas, mas a decisao final e do servidor:
+ * em caso de 409, mostra a mensagem e recarrega a agenda.
  */
 public class NovaReservaActivity extends AppCompatActivity {
 

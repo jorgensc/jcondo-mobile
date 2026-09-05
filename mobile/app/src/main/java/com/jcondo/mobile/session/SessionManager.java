@@ -7,14 +7,8 @@ import com.jcondo.mobile.BuildConfig;
 import com.jcondo.mobile.api.model.Morador;
 
 /**
- * Guarda a sessao do morador entre execucoes do aplicativo.
- *
- * Fica no SharedPreferences: token, dados basicos do usuario, endereco da API
- * e a preferencia de notificacao. Isso e o que permite o app abrir direto na
- * tela inicial no segundo acesso, sem pedir a senha de novo.
- *
- * Nao guardamos a senha do morador em lugar nenhum - so o token, que expira
- * em 12h no servidor e e apagado no logout.
+ * Sessao do morador no SharedPreferences: token, dados basicos, endereco da API
+ * e preferencia de notificacao. A senha nao e guardada em lugar nenhum.
  */
 public class SessionManager {
 

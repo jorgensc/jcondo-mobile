@@ -21,14 +21,10 @@ import com.jcondo.mobile.session.SessionManager;
 import com.jcondo.mobile.ui.MainActivity;
 
 /**
- * Notificacao local de novo aviso.
+ * Notificacao local de novo aviso: a tela inicial compara o aviso mais recente
+ * com o ultimo ja visto e notifica so quando ha novidade.
  *
- * A cada carregamento da tela inicial o app compara o id do aviso mais recente
- * com o ultimo que o morador ja viu (guardado no SharedPreferences) e notifica
- * apenas quando aparece algo novo. E uma notificacao local, disparada pelo
- * proprio aplicativo - o push real via Firebase Cloud Messaging esta descrito
- * no relatorio como evolucao, porque exige um projeto no Firebase e um serviço
- * de envio no backend, fora do escopo desta entrega.
+ * Push real via Firebase ficou como evolucao (ver documentacao).
  */
 public final class Notificacoes {
 

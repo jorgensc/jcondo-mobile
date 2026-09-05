@@ -24,12 +24,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 /**
- * Estrutura de navegacao do aplicativo.
- *
- * Segura os cinco fragmentos do MVP e troca entre eles pela barra inferior.
- * Os fragmentos ja criados sao reaproveitados (hide/show) em vez de
- * recriados, entao voltar para uma aba mantem a posicao da lista e evita
- * uma nova chamada a API a cada toque.
+ * Navegacao do aplicativo: cinco fragmentos e a barra inferior.
+ * Os fragmentos sao ocultados e reexibidos em vez de recriados, entao voltar
+ * para uma aba mantem a posicao da lista.
  */
 public class MainActivity extends AppCompatActivity {
 
@@ -135,7 +132,6 @@ public class MainActivity extends AppCompatActivity {
         fragmentoAtual = existente;
     }
 
-    /** Cria o fragmento sob demanda, só quando a aba é aberta pela primeira vez. */
     private interface Criador {
         Fragment criar();
     }
@@ -167,7 +163,6 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
 
-    /** Implementado pelos fragmentos que sabem recarregar os proprios dados. */
     public interface Recarregavel {
         void recarregar();
     }

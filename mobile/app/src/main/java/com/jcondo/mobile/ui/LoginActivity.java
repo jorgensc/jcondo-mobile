@@ -25,11 +25,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 /**
- * Tela de entrada.
- *
- * Se ja existe um token guardado, a tela nem chega a ser desenhada: o app
- * abre direto na tela inicial. Foi uma decisao de UX - o morador que abre o
- * aplicativo para ver um aviso nao deveria digitar a senha toda vez.
+ * Tela de entrada. Se ja existe token guardado, nem chega a ser desenhada:
+ * o app abre direto na tela inicial.
  */
 public class LoginActivity extends AppCompatActivity {
 
@@ -164,7 +161,6 @@ public class LoginActivity extends AppCompatActivity {
         return editable == null ? "" : editable.toString().trim();
     }
 
-    /** TextWatcher enxuto, so com o metodo que interessa aqui. */
     private abstract static class LimpadorDeErro implements TextWatcher {
 
         abstract void aoMudar();

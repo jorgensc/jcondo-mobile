@@ -36,12 +36,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 /**
- * Tela inicial.
- *
- * Consome um unico endpoint (/api/home/resumo) que ja devolve morador,
- * contadores, proxima reserva e avisos recentes. Fazer uma chamada em vez de
- * quatro deixa a abertura do app visivelmente mais rapida numa rede movel e
- * evita a tela montar aos pedacos.
+ * Tela inicial. Consome um endpoint unico (/api/home/resumo) em vez de quatro:
+ * a tela carrega de uma vez e gasta menos rede.
  */
 public class HomeFragment extends Fragment implements MainActivity.Recarregavel {
 

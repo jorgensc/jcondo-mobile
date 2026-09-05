@@ -16,9 +16,7 @@ import jcondo.dto.ErroResponse;
 
 /**
  * Converte qualquer excecao da API num JSON unico {status, erro, mensagem}.
- *
- * Isso e o que permite o app mostrar "Este horário já está reservado" em vez
- * de "HTTP 500" - a mensagem que o usuario le vem pronta do servidor.
+ * A frase que o morador le ja sai pronta daqui.
  */
 // so vale para os @RestController: as telas Thymeleaf continuam
 // tratando erro do jeito delas, com mensagem na propria pagina

@@ -72,7 +72,6 @@ public class Morador {
     @Column(nullable = false, length = 10)
     private String perfil = PERFIL_MORADOR;
 
-    // JPA precisa do construtor vazio
     public Morador() {
     }
 

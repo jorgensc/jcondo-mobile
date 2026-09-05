@@ -26,12 +26,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 /**
- * Abertura de ocorrencia.
- *
- * As categorias vem da propria API, para nao existirem duas listas
- * divergentes (uma no app e outra no servidor). Se a chamada falhar, uma
- * lista local equivalente entra no lugar - o morador consegue abrir o
- * chamado mesmo com a rede instavel no momento de carregar o formulario.
+ * Abertura de ocorrencia. As categorias vem da API para nao existirem duas
+ * listas divergentes; se a chamada falhar, a lista local entra no lugar.
  */
 public class NovaOcorrenciaActivity extends AppCompatActivity {
 
@@ -68,8 +64,7 @@ public class NovaOcorrenciaActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(@NonNull Call<List<String>> call, @NonNull Throwable erro) {
-                // segue com a lista local; nao vale interromper o morador por isso
-            }
+                }
         });
     }
 

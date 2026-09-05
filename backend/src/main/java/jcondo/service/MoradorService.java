@@ -19,7 +19,6 @@ public class MoradorService {
 
     private final MoradorRepository repository;
 
-    // injecao pelo construtor (nao precisa de @Autowired)
     public MoradorService(MoradorRepository repository) {
         this.repository = repository;
     }

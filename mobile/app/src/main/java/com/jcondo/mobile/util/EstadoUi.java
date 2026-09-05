@@ -6,13 +6,9 @@ import com.jcondo.mobile.R;
 import com.jcondo.mobile.databinding.ViewEstadoBinding;
 
 /**
- * Controla o bloco view_estado, que cobre os tres momentos em que uma lista
- * nao tem conteudo para mostrar: carregando, vazia e com erro.
- *
- * Centralizar isso resolve um problema classico de UX em aplicativo que
- * consome API: a tela em branco. O morador sempre ve ou um indicador de
- * progresso, ou uma explicacao do porque a lista esta vazia, ou o motivo da
- * falha com um botao para tentar de novo.
+ * Controla o bloco view_estado: carregando, vazio e erro.
+ * Centralizar resolve a tela em branco - o morador sempre ve progresso, uma
+ * explicacao ou o motivo da falha com botao para tentar de novo.
  */
 public class EstadoUi {
 

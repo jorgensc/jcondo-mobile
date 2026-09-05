@@ -21,10 +21,9 @@ import jcondo.repository.ReservaRepository;
 /**
  * Regras de reserva de area comum.
  *
- * Toda validacao esta aqui, no servidor, e nao no aplicativo. O app ate
- * esconde os horarios ocupados pra facilitar a vida do morador, mas quem
- * decide se a reserva pode ou nao ser gravada e este service - se dois
- * moradores enviarem o mesmo horario ao mesmo tempo, um dos dois recebe 409.
+ * Toda validacao esta aqui, no servidor. O app esconde os horarios ocupados
+ * para facilitar, mas quem decide se a reserva pode ser gravada e este service:
+ * se dois moradores enviarem o mesmo horario ao mesmo tempo, um recebe 409.
  */
 @Service
 public class ReservaService {

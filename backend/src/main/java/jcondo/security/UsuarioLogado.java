@@ -6,11 +6,8 @@ import org.springframework.web.context.annotation.RequestScope;
 import jcondo.entity.Morador;
 
 /**
- * Guarda o morador autenticado durante uma requisicao.
- *
- * O AuthInterceptor preenche isso depois de validar o token, e os controllers
- * so pedem o objeto - assim nenhum endpoint precisa receber o id do usuario
- * por parametro, o que impediria um morador de consultar dados de outro.
+ * Morador autenticado na requisicao atual, preenchido pelo AuthInterceptor.
+ * E o que permite os endpoints nao receberem o id do usuario por parametro.
  */
 @Component
 @RequestScope

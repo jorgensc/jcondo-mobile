@@ -27,12 +27,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 /**
- * Perfil do morador: dados de contato editaveis, preferencia de notificacao
- * e saida da conta.
- *
- * Bloco, apartamento e CPF ficam de fora da edicao de proposito - sao dados
- * cadastrais que so a administracao pode alterar, e a regra correspondente
- * tambem existe no servidor (PUT /api/perfil ignora esses campos).
+ * Perfil do morador. Bloco, apartamento e CPF ficam fora da edicao de
+ * proposito: sao dados cadastrais, e o PUT /api/perfil tambem os ignora.
  */
 public class PerfilFragment extends Fragment implements MainActivity.Recarregavel {
 

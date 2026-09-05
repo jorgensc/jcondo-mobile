@@ -10,6 +10,5 @@ import jcondo.entity.Aviso;
 @Repository
 public interface AvisoRepository extends JpaRepository<Aviso, Long> {
 
-    // mais recentes primeiro, que e a ordem que faz sentido na lista do app
     List<Aviso> findByAtivoTrueOrderByDataPublicacaoDesc();
 }

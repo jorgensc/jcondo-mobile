@@ -132,8 +132,19 @@ vida do token de sessão.
 
 ## Documentação
 
-- [`docs/API.md`](docs/API.md) — todos os endpoints, com exemplos de requisição e resposta
-- [`docs/Relatorio_Tecnico_JCondo_Mobile.docx`](docs/) — relatório técnico da atividade
+Tudo em `docs/`, em PDF e DOCX:
+
+| Arquivo | O que é |
+|---|---|
+| `AA1_Projeto_JCondo_Mobile` | Projeto da primeira etapa: requisitos, justificativa da plataforma e mockups |
+| `AA2_Documentacao_Tecnica` | Documentação técnica desta entrega, com a rastreabilidade de cada requisito |
+| `Guia_de_Execucao` | Passo a passo do zero até o app rodando no emulador |
+| `Roteiro_Apresentacao` | Roteiro da apresentação final, com a fala e a marcação de tempo |
+| `API.md` | Todos os endpoints, com exemplos de requisição e resposta |
+| `GUIA_DE_EVOLUCAO.md` | Como continuar o projeto: onde fica cada coisa e passo a passo de uma funcionalidade nova |
+| `mockups/` | Telas e diagramas em PNG |
+
+**Se é a primeira vez rodando o projeto, comece pelo `Guia_de_Execucao.pdf`.**
 
 ---
 

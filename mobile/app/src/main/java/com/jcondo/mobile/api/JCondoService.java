@@ -25,12 +25,9 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 /**
- * Contrato da API REST do JCondo.
- *
- * Cada metodo aqui corresponde a um endpoint do backend Spring Boot. O
- * Retrofit gera a implementacao em tempo de execucao, e o token de sessao e
- * anexado automaticamente pelo interceptor configurado no ApiClient - por
- * isso nenhuma assinatura precisa receber o token como parametro.
+ * Contrato da API REST. Cada metodo corresponde a um endpoint do backend.
+ * O token e anexado pelo interceptor do ApiClient, por isso nenhuma assinatura
+ * o recebe como parametro.
  */
 public interface JCondoService {
 

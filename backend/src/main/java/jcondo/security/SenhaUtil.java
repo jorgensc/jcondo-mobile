@@ -5,13 +5,11 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 /**
- * Hash de senha com SHA-256 e um sal fixo da aplicacao.
+ * Hash de senha com SHA-256 e sal fixo.
  *
- * A senha nunca e gravada em texto puro no banco e nunca volta numa resposta
- * da API (ver @JsonProperty WRITE_ONLY em Morador). Para um sistema em
- * producao o correto seria BCrypt/Argon2 com sal por usuario, que resiste a
- * ataque de forca bruta em GPU - aqui o SHA-256 foi escolhido para manter o
- * escopo academico sem adicionar o Spring Security ao projeto.
+ * A senha nunca e gravada em texto puro nem volta numa resposta da API.
+ * Em producao o correto seria BCrypt ou Argon2; o SHA-256 foi escolhido para
+ * nao trazer o Spring Security ao projeto (limitacao registrada na documentacao).
  */
 public final class SenhaUtil {
 

@@ -18,7 +18,6 @@ public class Morador implements Serializable {
         return "ADMIN".equalsIgnoreCase(perfil);
     }
 
-    /** Primeiro nome, usado na saudacao da tela inicial. */
     public String primeiroNome() {
         if (nome == null || nome.trim().isEmpty()) {
             return "";

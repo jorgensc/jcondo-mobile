@@ -26,8 +26,8 @@ import jcondo.service.OcorrenciaService;
 import jcondo.service.ReservaService;
 
 /**
- * Endpoints ligados ao usuario da sessao: perfil e resumo da tela inicial.
- * Nenhum deles recebe id por parametro - quem responde e sempre o dono do token.
+ * Perfil e resumo da tela inicial. Nenhum endpoint aqui recebe id por
+ * parametro: quem responde e sempre o dono do token.
  */
 @RestController
 @RequestMapping("/api")
@@ -123,7 +123,6 @@ public class PerfilRestController {
         return "Boa noite";
     }
 
-    /** Corpo aceito no PUT /api/perfil. */
     public record AtualizacaoPerfil(String telefone, String email,
                                     String senhaAtual, String novaSenha) {
     }

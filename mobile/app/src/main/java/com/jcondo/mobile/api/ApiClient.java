@@ -14,16 +14,11 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- * Monta e reaproveita o cliente Retrofit do aplicativo.
+ * Cliente Retrofit do aplicativo.
  *
- * Dois pontos importantes:
- *
- * 1) o token de sessao entra num interceptor, e nao em cada chamada. Assim
- *    nenhuma tela precisa lembrar de enviar o header Authorization, e trocar
- *    a forma de autenticacao no futuro (JWT, por exemplo) mexe em um lugar so;
- *
- * 2) a instancia e recriada quando o morador muda o endereco da API na tela
- *    de login - por isso o cache guarda tambem a URL que gerou o cliente.
+ * O token entra por interceptor, e nao em cada chamada: nenhuma tela precisa
+ * lembrar de mandar o header Authorization. O cliente e recriado quando o
+ * endereco da API muda na tela de login, por isso o cache guarda a URL.
  */
 public final class ApiClient {
 
@@ -44,7 +39,6 @@ public final class ApiClient {
         return retrofit.create(JCondoService.class);
     }
 
-    /** Força a recriação do cliente (usado quando o endereço da API muda). */
     public static synchronized void reiniciar() {
         retrofit = null;
         urlEmUso = null;

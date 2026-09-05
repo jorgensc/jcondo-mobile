@@ -14,11 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Grade de horarios da area no dia escolhido.
- *
- * Os horarios ocupados aparecem, mas desabilitados: mostrar que existem e
- * que estao tomados informa mais do que simplesmente esconde-los, e evita a
- * sensacao de que o app "perdeu" opcoes.
+ * Grade de horarios da area no dia escolhido. Os ocupados aparecem
+ * desabilitados em vez de sumirem, para nao dar a impressao de opcao perdida.
  */
 public class HorarioAdapter extends RecyclerView.Adapter<HorarioAdapter.Item> {
 
