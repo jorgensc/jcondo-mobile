@@ -56,11 +56,20 @@ No Windows, troque `./mvnw` por `mvnw.cmd`.
 Isso sobe a API em `http://localhost:8080` com um banco H2 em memória, já populado
 com moradores, áreas comuns, avisos, uma reserva e uma ocorrência de exemplo.
 
-**Opção com MySQL** (configuração original da AA1):
+**Opção com MySQL / XAMPP** (configuração padrão do projeto):
 
-1. Importe `backend/database/jcondo.sql` no MySQL;
-2. Ajuste usuário e senha em `backend/src/main/resources/application.properties`;
-3. Execute `./mvnw spring-boot:run`.
+1. Ligue o MySQL no XAMPP;
+2. Prepare o banco, conforme a sua situação:
+   - **banco novo:** importe `backend/database/jcondo.sql` pelo phpMyAdmin;
+   - **já tem o banco `jcondo` do projeto web:** use `backend/database/migracao_projeto_web.sql`;
+   - **ou nem isso:** crie um banco vazio chamado `jcondo` e pule para o passo 4 —
+     o `ddl-auto=update` cria as tabelas e o `DataSeeder` popula na primeira execução.
+3. Se a senha do root não estiver em branco, preencha `spring.datasource.password`
+   em `backend/src/main/resources/application.properties`;
+4. Execute `./mvnw spring-boot:run` (sem o `-Dspring-boot.run.profiles=h2`).
+
+O passo a passo detalhado, com os erros comuns de conexão, está na seção 3.4 do
+`docs/Guia_de_Execucao.pdf`.
 
 **Verificar se subiu:**
 
