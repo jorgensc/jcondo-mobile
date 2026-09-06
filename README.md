@@ -42,42 +42,44 @@ jcondo-mobile/
 
 ### 1. Subir a API
 
-Requisito: **JDK 21**.
-
-**Opção rápida — sem instalar banco** (recomendada para avaliação):
+Requisito: **JDK 21**. Banco de dados não precisa instalar.
 
 ```bash
 cd backend
-./mvnw spring-boot:run -Dspring-boot.run.profiles=h2
+mvnw.cmd spring-boot:run -Dspring-boot.run.profiles=h2
 ```
 
-No Windows, troque `./mvnw` por `mvnw.cmd`.
+No Linux ou macOS, `./mvnw` no lugar de `mvnw.cmd`.
 
-Isso sobe a API em `http://localhost:8080` com um banco H2 em memória, já populado
-com moradores, áreas comuns, avisos, uma reserva e uma ocorrência de exemplo.
-
-**Opção com MySQL / XAMPP** (configuração padrão do projeto):
-
-1. Ligue o MySQL no XAMPP;
-2. Prepare o banco, conforme a sua situação:
-   - **banco novo:** importe `backend/database/jcondo.sql` pelo phpMyAdmin;
-   - **já tem o banco `jcondo` do projeto web:** use `backend/database/migracao_projeto_web.sql`;
-   - **ou nem isso:** crie um banco vazio chamado `jcondo` e pule para o passo 4 —
-     o `ddl-auto=update` cria as tabelas e o `DataSeeder` popula na primeira execução.
-3. Se a senha do root não estiver em branco, preencha `spring.datasource.password`
-   em `backend/src/main/resources/application.properties`;
-4. Execute `./mvnw spring-boot:run` (sem o `-Dspring-boot.run.profiles=h2`).
-
-O passo a passo detalhado, com os erros comuns de conexão, está na seção 3.4 do
-`docs/Guia_de_Execucao.pdf`.
+A API sobe em `http://localhost:8080` com um banco **H2 em memória**, já populado
+com moradores, áreas comuns, avisos, uma reserva e uma ocorrência. O H2 é um banco
+relacional completo que roda dentro do próprio processo da aplicação — os dados
+ficam na memória e voltam ao estado inicial a cada reinício, o que deixa a
+demonstração previsível.
 
 **Verificar se subiu:**
 
-- Swagger: <http://localhost:8080/swagger-ui/index.html>
-- CRUD web de moradores (da AA1): <http://localhost:8080/moradores>
+| O quê | Endereço |
+|---|---|
+| Documentação da API (Swagger) | <http://localhost:8080/swagger-ui/index.html> |
+| Console do banco H2 | <http://localhost:8080/h2-console> |
+| CRUD web de moradores (do projeto anterior) | <http://localhost:8080/moradores> |
+
+No console H2, preencha o campo **JDBC URL** com `jdbc:h2:mem:jcondo`, usuário `sa`,
+senha em branco. O padrão que ele sugere aponta para um banco vazio.
 
 Para testar a API pelo Swagger: chame `POST /api/auth/login`, copie o `token` da
 resposta e cole no botão **Authorize**.
+
+**Rodar com MySQL** (dados que sobrevivem entre execuções):
+
+1. Importe `backend/database/jcondo.sql` pelo phpMyAdmin — ele cria o banco do zero;
+2. Se a senha do root não estiver em branco, preencha `spring.datasource.password`
+   em `backend/src/main/resources/application.properties`;
+3. Execute `mvnw.cmd spring-boot:run`, sem o trecho do perfil.
+
+O apêndice A do `docs/Guia_de_Execucao.pdf` detalha esse caminho, incluindo o que
+fazer quando o MySQL do XAMPP não inicia.
 
 ### 2. Rodar o aplicativo
 
