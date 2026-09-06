@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Item das listas de seleção (área comum e categoria de ocorrência).
+    Existe para garantir o contraste e a altura mínima de toque: o
+    android.R.layout.simple_list_item_1 herda cor do tema do sistema e pode
+    ficar ilegível dependendo do aparelho.
+-->
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:minHeight="@dimen/alvo_toque"
+    android:paddingStart="@dimen/esp_m"
+    android:paddingEnd="@dimen/esp_m"
+    android:textColor="@color/jc_texto"
+    android:textSize="16sp" />

@@ -104,4 +104,15 @@
         <item name="android:color">@color/jc_azul_100</item>
     </style>
 
+    <!--
+        Campo de seleção (dropdown). Precisa do estilo ExposedDropdownMenu, e não
+        do OutlinedBox comum: é ele que desenha a seta e faz o toque abrir a lista.
+    -->
+    <style name="CampoSelecao" parent="Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+    </style>
+
 </resources>

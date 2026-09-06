@@ -64,13 +64,14 @@ public class NovaOcorrenciaActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(@NonNull Call<List<String>> call, @NonNull Throwable erro) {
-                }
+                // segue com a lista local: nao vale travar o morador por isso
+            }
         });
     }
 
     private void aplicarCategorias(List<String> categorias) {
         binding.categoriaInput.setAdapter(new ArrayAdapter<>(
-                this, android.R.layout.simple_list_item_1, categorias));
+                this, R.layout.item_dropdown, categorias));
     }
 
     private void enviar() {

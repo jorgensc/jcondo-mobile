@@ -84,7 +84,7 @@ public class NovaReservaActivity extends AppCompatActivity {
                     areas.addAll(resposta.body());
                     binding.areaInput.setAdapter(new ArrayAdapter<>(
                             NovaReservaActivity.this,
-                            android.R.layout.simple_list_item_1,
+                            R.layout.item_dropdown,
                             areas));
                 } else {
                     Ui.aviso(binding.getRoot(),
