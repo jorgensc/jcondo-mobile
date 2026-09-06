@@ -30,6 +30,7 @@ public class ReservaService {
 
     // duracao das faixas mostradas na agenda da area
     private static final int BLOCO_HORAS = 2;
+    private static final int MINUTOS_DO_DIA = 24 * 60;
 
     private final ReservaRepository repository;
     private final AreaComumService areaService;
@@ -63,11 +64,22 @@ public class ReservaService {
                 areaId, data, Reserva.STATUS_CONFIRMADA);
 
         List<HorarioDTO> faixas = new ArrayList<>();
-        LocalTime inicio = area.getHorarioAbertura();
-        LocalTime fechamento = area.getHorarioFechamento();
 
-        while (!inicio.plusHours(BLOCO_HORAS).isAfter(fechamento)) {
-            LocalTime fim = inicio.plusHours(BLOCO_HORAS);
+        // A contagem e feita em minutos desde a meia-noite, e nao somando horas
+        // direto no LocalTime: 22:00 mais duas horas volta para 00:00, que nunca
+        // e "depois" do fechamento, e o laco jamais terminaria.
+        int bloco = BLOCO_HORAS * 60;
+        int abertura = minutos(area.getHorarioAbertura());
+        int fechamento = minutos(area.getHorarioFechamento());
+        if (fechamento <= abertura) {
+            // area que atravessa a meia-noite (ex.: 18:00 as 02:00)
+            fechamento += MINUTOS_DO_DIA;
+        }
+
+        for (int minuto = abertura; minuto + bloco <= fechamento; minuto += bloco) {
+            LocalTime inicio = emHora(minuto);
+            LocalTime fim = emHora(minuto + bloco);
+
             boolean livre = true;
             for (Reserva r : ocupadas) {
                 if (inicio.isBefore(r.getHoraFim()) && fim.isAfter(r.getHoraInicio())) {
@@ -81,7 +93,6 @@ public class ReservaService {
                 livre = false;
             }
             faixas.add(new HorarioDTO(hhmm(inicio), hhmm(fim), livre));
-            inicio = fim;
         }
         return faixas;
     }
@@ -157,5 +168,15 @@ public class ReservaService {
 
     private static String hhmm(LocalTime hora) {
         return String.format("%02d:%02d", hora.getHour(), hora.getMinute());
+    }
+
+    private static int minutos(LocalTime hora) {
+        return hora.getHour() * 60 + hora.getMinute();
+    }
+
+    /** Volta de "minutos desde a meia-noite" para LocalTime, dando a volta no dia. */
+    private static LocalTime emHora(int minutoDoDia) {
+        int normalizado = minutoDoDia % MINUTOS_DO_DIA;
+        return LocalTime.of(normalizado / 60, normalizado % 60);
     }
 }
