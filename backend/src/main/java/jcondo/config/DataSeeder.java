@@ -85,7 +85,7 @@ public class DataSeeder implements CommandLineRunner {
                 "(49) 99933-3333", "carla.rocha@email.com", "123456", Morador.PERFIL_MORADOR);
         Morador diego = novo("Diego Ferreira Alves", "104", "C", "456.789.012-34",
                 "(49) 99944-4444", "diego.alves@email.com", "123456", Morador.PERFIL_MORADOR);
-        Morador sindico = novo("Roberto Síndico", "001", "A", "999.888.777-66",
+        Morador sindico = novo("Jorge", "001", "A", "999.888.777-66",
                 "(49) 99900-0000", "sindico@jcondo.com", "admin123", Morador.PERFIL_ADMIN);
 
         moradorRepository.saveAll(List.of(ana, bruno, carla, diego, sindico));

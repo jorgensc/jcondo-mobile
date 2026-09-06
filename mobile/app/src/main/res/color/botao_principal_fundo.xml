@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Fundo do botão principal. Sem este seletor, o backgroundTint fica numa cor
+    sólida e o botão desabilitado continua azul escuro, com o texto a 38% de
+    opacidade que o Material aplica: o resultado é uma barra azul sem texto.
+-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="false" android:color="@color/jc_neutro_fundo" />
+    <item android:color="@color/jc_azul_800" />
+</selector>

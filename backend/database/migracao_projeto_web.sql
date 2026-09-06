@@ -49,7 +49,7 @@ USE jcondo;
 -- ---------------------------------------------------------------------------
 
 INSERT INTO moradores (nome, apartamento, bloco, cpf, telefone, email, senha, perfil)
-VALUES ('Roberto Síndico', '001', 'A', '999.888.777-66', '(49) 99900-0000',
+VALUES ('Jorge', '001', 'A', '999.888.777-66', '(49) 99900-0000',
         'sindico@jcondo.com',
         '2160d362ddfca07a7f219fc4ce7bedae5105bcc793435ab56fba4643ecdcad57',
         'ADMIN');

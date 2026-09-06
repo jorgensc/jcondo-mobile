@@ -156,7 +156,7 @@ INSERT INTO moradores (nome, apartamento, bloco, cpf, telefone, email, senha, pe
  '114bcd61f23ee3da38676c5f2a41fc99c9f94576f8f7a607b664cd6a53d6f340', 'MORADOR'),
 ('Diego Ferreira Alves', '104', 'C', '456.789.012-34', '(49) 99944-4444', 'diego.alves@email.com',
  '114bcd61f23ee3da38676c5f2a41fc99c9f94576f8f7a607b664cd6a53d6f340', 'MORADOR'),
-('Roberto Síndico',      '001', 'A', '999.888.777-66', '(49) 99900-0000', 'sindico@jcondo.com',
+('Jorge',                '001', 'A', '999.888.777-66', '(49) 99900-0000', 'sindico@jcondo.com',
  '2160d362ddfca07a7f219fc4ce7bedae5105bcc793435ab56fba4643ecdcad57', 'ADMIN');
 
 -- ---------------------------------------------------------------------------

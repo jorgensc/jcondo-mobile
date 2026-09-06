@@ -84,7 +84,10 @@
         <item name="android:minHeight">@dimen/alvo_toque</item>
         <item name="android:textSize">16sp</item>
         <item name="cornerRadius">12dp</item>
-        <item name="backgroundTint">@color/jc_azul_800</item>
+        <!-- seletores, e nao cor fixa: o botao desabilitado precisa mudar de
+             fundo, senao o texto esmaecido some sobre o azul escuro -->
+        <item name="backgroundTint">@color/botao_principal_fundo</item>
+        <item name="android:textColor">@color/botao_principal_texto</item>
     </style>
 
     <style name="BotaoSecundario" parent="Widget.Material3.Button.OutlinedButton">

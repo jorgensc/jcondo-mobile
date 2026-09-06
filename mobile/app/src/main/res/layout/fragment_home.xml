@@ -16,9 +16,14 @@
         android:layout_height="match_parent"
         android:fillViewport="true">
 
+        <!--
+            match_parent aqui é o que faz o bloco de estado ocupar a tela quando
+            o conteúdo está escondido. Com wrap_content, o estado (que é
+            match_parent) colapsa para altura zero e a tela fica em branco.
+        -->
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <LinearLayout
                 android:id="@+id/conteudoHome"

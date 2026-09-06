@@ -30,6 +30,9 @@ import retrofit2.Response;
  */
 public class LoginActivity extends AppCompatActivity {
 
+    /** Marca que o app voltou para ca por causa de um token vencido. */
+    public static final String EXTRA_SESSAO_EXPIRADA = "sessao_expirada";
+
     private ActivityLoginBinding binding;
     private SessionManager sessao;
 
@@ -38,6 +41,10 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         sessao = SessionManager.get(this);
 
+        // a trava do ApiClient so e liberada aqui: enquanto a tela de login nao
+        // aparece, as outras chamadas que tambem tomaram 401 nao reabrem nada
+        ApiClient.loginRetomado();
+
         if (sessao.estaLogado()) {
             abrirPrincipal();
             return;
@@ -45,6 +52,10 @@ public class LoginActivity extends AppCompatActivity {
 
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        if (getIntent() != null && getIntent().getBooleanExtra(EXTRA_SESSAO_EXPIRADA, false)) {
+            Ui.aviso(binding.getRoot(), getString(R.string.erro_sessao_expirada));
+        }
 
         binding.entrarBotao.setOnClickListener(v -> entrar());
         binding.esqueciTexto.setOnClickListener(v -> mostrarAjudaSenha());
